@@ -1,0 +1,133 @@
+/* Общие стили для body */
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f9f9f9;
+  flex-direction: column;
+}
+
+/* Стили для формы входа и контейнера календаря */
+#loginForm, #calendarContainer {
+  width: 90%; /* Увеличиваем ширину */
+  max-width: 1200px; /* Ограничиваем максимальную ширину */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  background-color: #fff;
+  margin-top: 20px;
+}
+
+#loginForm {
+  display: block;
+}
+
+#calendarContainer {
+  display: none;
+}
+
+/* Стили для заголовка календаря */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Стили для дней месяца */
+.days {
+  display: flex;
+  overflow-x: auto; /* Добавляем горизонтальную прокрутку */
+  flex-wrap: nowrap;
+  gap: 10px;
+  padding: 10px 0;
+}
+
+.days div {
+  flex: 0 0 auto;
+  width: 200px; /* Увеличиваем ширину ячеек */
+  height: 250px; /* Увеличиваем высоту ячеек */
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #ddd;
+  position: relative;
+  cursor: pointer;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.days div img {
+  max-width: 100%;
+  max-height: 100px; /* Ограничиваем высоту изображений */
+  margin-top: 5px;
+  cursor: pointer; /* Указатель для увеличения изображения */
+}
+
+#imageUploadForm {
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  background-color: #fff;
+}
+
+#imageUploadForm h3 {
+  margin-top: 0;
+}
+
+.calendar {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.days div {
+  font-size: 1.2em;
+}
+
+/* Модальное окно для просмотра изображения */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.8);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}

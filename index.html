@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Простой линейный календарь с аутентификацией и изображениями</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="loginForm">
+    <h2>Пожалуйста, введите пароль:</h2>
+    <input type="password" id="passwordInput">
+    <button onclick="authenticate()">Войти</button>
+  </div>
+
+  <div id="calendarContainer" style="display: none;">
+    <div class="calendar">
+      <div class="header">
+        <button id="prevBtn">&lt;</button>
+        <h2 id="monthYear"></h2>
+        <button id="nextBtn">&gt;</button>
+      </div>
+      <div class="days" id="daysContainer">
+        <!-- Дни месяца будут добавлены сюда -->
+      </div>
+    </div>
+
+    <!-- Форма для загрузки изображений -->
+    <div id="imageUploadForm" style="display: none;">
+      <h3>Добавить изображения к <span id="selectedDate"></span></h3>
+      <input type="file" id="imageInput" multiple>
+      <button onclick="uploadImages()">Загрузить</button>
+    </div>
+  </div>
+
+  <!-- Модальное окно для просмотра изображения -->
+  <div id="imageModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modalImage">
+    <div id="caption"></div>
+  </div>
+
+  <script src="calendar.js"></script>
+</body>
+</html>
